@@ -42,6 +42,9 @@ const Header = () => {
         </NavLink>
 
         <div className="flex items-center">
+          <div className=" md:hidden">
+            <ThemeBtn />
+          </div>
           <button
             onClick={toggleMenu}
             type="button"
@@ -87,7 +90,7 @@ const Header = () => {
                 }
                 aria-current="page"
               >
-                HOME
+                Home
               </NavLink>
             </li>
 
@@ -103,7 +106,7 @@ const Header = () => {
                 }
                 aria-current="page"
               >
-                ABOUT
+                About
               </NavLink>
             </li>
 
@@ -162,7 +165,7 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <div className="flex space-x-4">
+            <div className="flex  md:space-x-4">
               <NavLink
                 to="/login"
                 className="flex items-center px-4 py-2 text-xl text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
@@ -177,9 +180,9 @@ const Header = () => {
               </NavLink>
             </div>
           )}
-        </div>
-        <div className="hidden md:block">
-          <ThemeBtn />
+          <div className=" hidden md:block">
+            <ThemeBtn />
+          </div>
         </div>
       </div>
     </nav>

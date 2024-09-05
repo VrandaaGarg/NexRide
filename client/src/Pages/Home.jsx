@@ -1,5 +1,6 @@
 import React from "react";
 import FeatureCard from "../Components/FeatureCard/FeatureCard";
+import Faqs from "../Components/Faqs/Faqs";
 
 function Home() {
   return (
@@ -25,6 +26,7 @@ function Home() {
       </div>
 
       <FeatureCard />
+      <Faqs />
     </div>
   );
 }
