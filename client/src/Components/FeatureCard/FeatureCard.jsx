@@ -5,7 +5,7 @@ function FeatureCard() {
   return (
     <>
       <div className="md:px-16 flex flex-col px-8 gap-10 pb-11 dark:bg-gray-900">
-        <div className="md:flex bg-gray-200 p-3 m-4 rounded-2xl border-black border-r-2 border-b-2 md:bg-white  dark:md:bg-gray-900 md:border-none ">
+        <div className="md:flex bg-gray-200 dark:bg-gray-700 p-3 m-4 rounded-2xl border-black border-r-2 border-b-2 md:bg-white  dark:md:bg-gray-900 md:border-none ">
           <div className="flex-1 grid place-content-center">
             <img src="/track.webp" className="h-36 md:h-72 rounded-3xl my-3" />
           </div>
@@ -31,7 +31,7 @@ function FeatureCard() {
           </div>
         </div>
 
-        <div className="md:flex bg-gray-200 p-3 m-4 rounded-2xl border-black border-r-2 border-b-2 md:bg-white  dark:md:bg-gray-900 md:border-none ">
+        <div className="md:flex bg-gray-200 dark:bg-gray-700 p-3 m-4 rounded-2xl border-black border-r-2 border-b-2 md:bg-white  dark:md:bg-gray-900 md:border-none ">
           <div className="flex-1 grid text-center md:text-left place-content-center md:px-16 gap-3">
             <h1 className="text-blue-600 font-bold text-4xl dark:text-white dark:md:text-blue-400">
               RideGuide

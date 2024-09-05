@@ -14,7 +14,7 @@ function About() {
           <h1 className="text-5xl font-bold">
             Welcome to NexRide Discover NexRide!
           </h1>
-          <br /> your ultimate solution for electric 2-wheeler delivery
+          <br /> Your ultimate solution for electric 2-wheeler delivery
           logistics. Our platform is designed to address key challenges in the
           industry by providing a comprehensive app that ensures efficient,
           transparent, and secure delivery processes. From real-time tracking to
