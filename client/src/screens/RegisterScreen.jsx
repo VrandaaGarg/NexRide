@@ -43,12 +43,15 @@ const RegisterScreen = () => {
   };
 
   return (
-    <div className="pt-20">
+    <div className="py-20 dark:bg-gray-900 ">
       <FormContainer>
-        <h1 className="text-2xl font-bold mb-4">Register</h1>
+        <h1 className="text-2xl dark:text-gray-100 font-bold mb-4">Register</h1>
         <form onSubmit={submitHandler} className="space-y-4">
           <div className="flex flex-col">
-            <label htmlFor="name" className="text-lg font-medium mb-2">
+            <label
+              htmlFor="name"
+              className="text-lg dark:text-gray-100 font-medium mb-2"
+            >
               Name
             </label>
             <input
@@ -62,7 +65,10 @@ const RegisterScreen = () => {
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="email" className="text-lg font-medium mb-2">
+            <label
+              htmlFor="email"
+              className="text-lg dark:text-gray-100 font-medium mb-2"
+            >
               Email Address
             </label>
             <input
@@ -76,7 +82,10 @@ const RegisterScreen = () => {
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="password" className="text-lg font-medium mb-2">
+            <label
+              htmlFor="password"
+              className="text-lg dark:text-gray-100 font-medium mb-2"
+            >
               Password
             </label>
             <input
@@ -92,7 +101,7 @@ const RegisterScreen = () => {
           <div className="flex flex-col">
             <label
               htmlFor="confirmPassword"
-              className="text-lg font-medium mb-2"
+              className="text-lg font-medium mb-2 dark:text-gray-100"
             >
               Confirm Password
             </label>
@@ -108,7 +117,7 @@ const RegisterScreen = () => {
 
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="bg-blue-500 dark:text-gray-100 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Register
           </button>
@@ -117,9 +126,12 @@ const RegisterScreen = () => {
         </form>
 
         <div className="py-3">
-          <p>
+          <p className="dark:text-gray-100">
             Already have an account?{" "}
-            <Link to="/login" className="text-blue-500 hover:underline">
+            <Link
+              to="/login"
+              className="text-blue-500 dark:text-gray-100 hover:underline"
+            >
               Login
             </Link>
           </p>

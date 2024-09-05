@@ -1,35 +1,52 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ThemeBtn from "../ThemeBtn/ThemeBtn";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useLogoutMutation } from "../../slices/usersApiSlice";
+import { logout } from "../../slices/authSlice";
+import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 
-function Header() {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { userInfo } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [logoutApiCall] = useLogoutMutation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 z-20">
-      <div className=" flex flex-wrap items-center justify-between px-4 md:px-14 z-30  p-4 fixed w-lvw bg-white dark:bg-gray-900">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-20">
+      <div className="flex flex-wrap items-center justify-between px-4 md:px-14 p-4">
         <NavLink
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="/logo.png" className="h-10 w-10" alt="" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <img src="/logo.png" className="h-10 w-10" alt="NexRide Logo" />
+          <span className="text-2xl font-semibold dark:text-white">
             NexRide
           </span>
         </NavLink>
-        <div className="flex ">
-          <div className="grid place-content-center md:hidden">
-            <ThemeBtn />
-          </div>
+
+        <div className="flex items-center">
           <button
             onClick={toggleMenu}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-default"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar"
             aria-expanded={isOpen}
           >
             <span className="sr-only">Open main menu</span>
@@ -54,8 +71,8 @@ function Header() {
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute top-full left-0 w-full bg-white dark:bg-gray-900 z-10 md:block md:static md:w-auto md:z-auto md:bg-transparent`}
-          id="navbar-default"
+          } md:flex md:items-center md:space-x-8`}
+          id="navbar"
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 dark:border-black rounded-lg bg-white  dark:bg-gray-900  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
             <li>
@@ -122,6 +139,43 @@ function Header() {
               </NavLink>
             </li>
           </ul>
+
+          {userInfo ? (
+            <div className="relative">
+              <button className="flex items-center py-2 px-3 text-xl rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+                {userInfo.name}
+              </button>
+              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg">
+                <NavLink
+                  to="/profile"
+                  className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  Profile
+                </NavLink>
+                <button
+                  onClick={logoutHandler}
+                  className="block w-full px-4 py-2 text-gray-900 dark:text-white text-left hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="flex space-x-4">
+              <NavLink
+                to="/login"
+                className="flex items-center px-4 py-2 text-xl text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+              >
+                <FaSignInAlt className="mr-2" /> Sign In
+              </NavLink>
+              <NavLink
+                to="/register"
+                className="flex items-center px-4 py-2 text-xl text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+              >
+                <FaSignOutAlt className="mr-2" /> Sign Up
+              </NavLink>
+            </div>
+          )}
         </div>
         <div className="hidden md:block">
           <ThemeBtn />
@@ -129,6 +183,6 @@ function Header() {
       </div>
     </nav>
   );
-}
+};
 
 export default Header;

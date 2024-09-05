@@ -35,15 +35,17 @@ const LoginScreen = () => {
   };
 
   return (
-    <div className="pt-20">
+    <div className="py-20 dark:bg-gray-900 ">
       <FormContainer>
-        <h1 className="text-2xl font-semibold mb-4 ">Sign In</h1>
+        <h1 className="text-2xl font-semibold mb-4 dark:text-gray-100">
+          Sign In
+        </h1>
 
         <form onSubmit={submitHandler} className="space-y-4">
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-100"
             >
               Email Address
             </label>
@@ -60,7 +62,7 @@ const LoginScreen = () => {
           <div className="space-y-2">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-100"
             >
               Password
             </label>
@@ -77,15 +79,18 @@ const LoginScreen = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-full py-2 dark:text-gray-100 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Sign In
           </button>
         </form>
 
         <div className="py-3 text-center">
-          <span>New Customer? </span>
-          <Link to="/register" className="text-blue-500 hover:underline">
+          <span className="dark:text-gray-100">New Customer? </span>
+          <Link
+            to="/register"
+            className="text-blue-500 dark:text-gray-100 hover:underline"
+          >
             Register
           </Link>
         </div>
