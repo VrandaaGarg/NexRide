@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLogoutMutation } from "../../slices/usersApiSlice";
 import { logout } from "../../slices/authSlice";
-import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaSignInAlt, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -141,11 +141,12 @@ const Header = () => {
           </ul>
 
           {userInfo ? (
-            <div className="relative">
-              <button className="flex items-center py-2 px-3 text-xl rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                {userInfo.name}
-              </button>
-              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg">
+            <div className="relative group">
+              <FaUserCircle className="text-3xl text-gray-900 dark:text-white cursor-pointer" />
+              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
+                <div className="px-4 py-2 text-gray-900 dark:text-white">
+                  {userInfo.name}
+                </div>
                 <NavLink
                   to="/profile"
                   className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
