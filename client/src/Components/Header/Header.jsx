@@ -105,6 +105,22 @@ function Header() {
                 RideGuide
               </NavLink>
             </li>
+
+            <li>
+              <NavLink
+                to="/track"
+                className={({ isActive }) =>
+                  `block py-1 px-3 rounded text-xl ${
+                    isActive
+                      ? "text-blue-500 dark:text-[#78b5ff]"
+                      : "text-gray-900 dark:text-white"
+                  } hover:text-blue-600  md:hover:bg-transparent md:border-0  md:p-0`
+                }
+                aria-current="page"
+              >
+                Track
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div className="hidden md:block">
