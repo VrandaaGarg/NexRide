@@ -11,6 +11,7 @@ import Layout from "./Layout.jsx";
 import Home from "./Pages/Home.jsx";
 import About from "./Pages/About.jsx";
 import RideGuide from "./Pages/RideGuide.jsx";
+import Track from "./Components/Track/Track.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="rideGuide" element={<RideGuide />} />
+      <Route path="track" element={<Track />} />
     </Route>
   )
 );
