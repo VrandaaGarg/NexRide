@@ -26,8 +26,8 @@ function Track() {
     if (isChecked) {
       setDeliveryStatuses((prevStatuses) => [...prevStatuses, status]); // Add to array
     } else {
-      setDeliveryStatuses((prevStatuses) =>
-        prevStatuses.filter((s) => s !== status) // Remove from array
+      setDeliveryStatuses(
+        (prevStatuses) => prevStatuses.filter((s) => s !== status) // Remove from array
       );
     }
   };
@@ -56,19 +56,29 @@ function Track() {
   };
 
   return (
-    <div className="py-20">
+    <div className="h-screen flex place-content-center flex-col gap-5">
       {/* Form to retrieve delivery status */}
-      <form onSubmit={handleFormSubmit} className="flex justify-center gap-5 text-2xl">
-        <label htmlFor="trackingId">Enter tracking ID:</label>
+      <form
+        onSubmit={handleFormSubmit}
+        className="flex px-9 flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5 text-lg sm:text-2xl w-full max-w-6xl mx-auto"
+      >
+        <label htmlFor="trackingId" className="text-center sm:text-left">
+          Enter tracking ID:
+        </label>
         <input
           type="text"
           id="trackingId"
           name="trackingId"
           value={trackingId}
-           className="border border-black rounded-2xl"
+          className="border border-black rounded-lg px-4 py-2 w-full sm:w-auto"
           onChange={(e) => setTrackingId(e.target.value)}
         />
-        <button type="submit" className="">Get Delivery Status</button>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all"
+        >
+          Get Delivery Status
+        </button>
       </form>
 
       {/* Display checkboxes and allow signed-in users to interact */}
@@ -138,7 +148,10 @@ function Track() {
               value="Ownership with Customer"
               checked={deliveryStatuses.includes("Ownership with Customer")}
               onChange={(e) =>
-                handleCheckboxChange("Ownership with Customer", e.target.checked)
+                handleCheckboxChange(
+                  "Ownership with Customer",
+                  e.target.checked
+                )
               }
             />
             Ownership with Customer
@@ -150,7 +163,9 @@ function Track() {
 
       {/* Display delivery status */}
       {deliveryStatuses && (
-        <p className="text-lg pl-10">Selected Delivery Statuses: {deliveryStatuses.join(", ")}</p>
+        <p className="w-full text-center text-lg pl-10">
+          Selected Delivery Statuses: {deliveryStatuses.join(", ")}
+        </p>
       )}
     </div>
   );
