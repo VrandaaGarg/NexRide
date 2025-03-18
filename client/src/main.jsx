@@ -16,7 +16,7 @@ import RideGuide from "./Pages/RideGuide.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
-import PrivateRoute from "./components/PrivateRoute.jsx";
+import PrivateRoute from "./Components/PrivateRoute.jsx";
 import Track from "./Components/Track/Track.jsx";
 import Team from "./Components/Team/Team.jsx";
 

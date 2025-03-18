@@ -2,10 +2,10 @@ import React from "react";
 
 function RideGuideCrd({ img, model, brand, budget, range }) {
   return (
-    <div className="bg-white dark:bg-slate-700 shadow-lg rounded-xl overflow-hidden w-72 h-96 p-6 flex flex-col transition-transform transform hover:scale-105">
-      <div className="flex justify-center mb-4">
+    <div className="bg-white dark:bg-slate-700 shadow-lg rounded-xl overflow-hidden w-72 h-fit p-6 flex flex-col transition-transform transform hover:scale-105">
+      <div className="flex justify-center mb-4 ">
         <img
-          className="w-32 h-32 object-cover rounded-full shadow-md"
+          className="w-32 h-32 object-cover rounded-full shadow-md dark:bg-slate-200 shadow-white/30"
           src={img}
           alt={model}
         />

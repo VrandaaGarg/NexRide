@@ -4,7 +4,7 @@ import Faqs from "../Components/Faqs/Faqs";
 
 function Home() {
   return (
-    <div className="dark:bg-gray-900">
+    <div className="dark:bg-gray-900 overflow-x-hidden">
       <div className="h-lvh relative pt-20 md:pt-16 dark:bg-gray-900">
         <div className="w-full h-[85vh] grid place-content-center relative mb-5 py-10">
           <img

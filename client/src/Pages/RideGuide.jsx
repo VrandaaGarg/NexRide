@@ -83,7 +83,7 @@ function RideGuide() {
       </div>
 
       {/* Budget, Range, Brand Filter */}
-      <div className="flex justify-center gap-7 mb-8">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-7 mb-8">
         <select
           className="border-2 border-gray-300 dark:border-black dark:text-black text-gray-700 rounded-2xl p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all dark:bg-slate-400"
           value={selectedBudget}
@@ -96,7 +96,7 @@ function RideGuide() {
           <option value="200000">Up to 2,00,000</option>
         </select>
         <select
-          className="border-2 border-gray-300 dark:border-black dark:text-black text-gray-700 rounded-2xl p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all dark:bg-slate-400"
+          className="border-2 text-sm border-gray-300 dark:border-black dark:text-black text-gray-700 rounded-2xl p-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all dark:bg-slate-400"
           value={selectedRange}
           onChange={(e) => setSelectedRange(e.target.value)}
         >
@@ -121,7 +121,7 @@ function RideGuide() {
       </div>
 
       {/* Filtered Vehicle Cards */}
-      <div className="flex flex-wrap justify-center gap-7 mt-8">
+      <div className="flex flex-wrap justify-center gap-5 md:gap-7 mt-8">
         {filteredData.map((val) => (
           <div key={val.id}>
             <RideGuideCrd

@@ -2,16 +2,18 @@ import React from "react";
 
 function About() {
   return (
-    <div className=" pt-28 md:px-16 flex flex-col gap-6 pb-24 dark:bg-gray-900 dark:text-gray-300">
+    <div className="text-center md:text-left pt-28 px-10 md:px-16 flex flex-col gap-6 pb-24 dark:bg-gray-900 dark:text-gray-300">
       <div className="grid place-content-center">
         <div className="">
-          <h1 className="text-center font-bold pb-3 text-5xl">About Us</h1>
+          <h1 className="text-center font-bold pb-3 text-3xl md:text-5xl">
+            About Us
+          </h1>
         </div>
         <div className="h-1 flex justify-center w-40 bg-blue-500 rounded-xl"></div>
       </div>
       <div className="">
         <h1 className="text-2xl">
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-2xl md:text-5xl font-bold">
             Welcome to NexRide Discover NexRide!
           </h1>
           <br /> Your ultimate solution for electric 2-wheeler delivery
@@ -23,7 +25,7 @@ function About() {
         </h1>
       </div>
       <div className="flex flex-col gap-14">
-        <h1 className="text-5xl font-bold">Features</h1>
+        <h1 className="text-2xl md:text-5xl font-bold">Features</h1>
         <div className="">
           <h1 className="text-3xl font-bold mb-3">Delivery Tracking</h1>
           <ul className="text-2xl">
@@ -76,7 +78,7 @@ function About() {
         </div>
       </div>
       <div className="">
-        <h1 className="text-4xl font-bold mb-3"> About Us</h1>
+        <h1 className="text-2xl md:text-5xl font-bold mb-3"> About Us</h1>
         <p className="text-2xl">
           Who We Are NexRide is dedicated to transforming electric 2-wheeler
           delivery logistics. Our mission is to tackle inefficiencies, enhance
